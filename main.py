@@ -35,6 +35,16 @@ def yellow_player_movement(keys_pressed, yellow):
             yellow.y += SHIP_SPEED
     if keys_pressed[pygame.K_w]:
             yellow.y -= SHIP_SPEED
+
+def red_player_movement(keys_pressed, red):
+    if keys_pressed[pygame.K_LEFT]:
+        red.x -= SHIP_SPEED
+    if keys_pressed[pygame.K_RIGHT]:
+        red.x += SHIP_SPEED
+    if keys_pressed[pygame.K_DOWN]:
+            red.y += SHIP_SPEED
+    if keys_pressed[pygame.K_UP]:
+            red.y -= SHIP_SPEED
         
     
     
@@ -53,6 +63,7 @@ def main():
                 run = False
         keys_pressed = pygame.key.get_pressed()
         yellow_player_movement(keys_pressed, yellow)
+        red_player_movement(keys_pressed, red)
 
         
         draw_windows(red, yellow)
